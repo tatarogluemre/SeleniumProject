@@ -28,15 +28,17 @@ public class C04_ClassWork {
 
         //Amazon'da görüntülenen ilgili sonuçların sayısını yazdırın
         List<WebElement> aramasonuclari = driver.findElements(By.className("sg-col-inner"));
-        String aramaSonucu = aramasonuclari.get(0).getText();
+         String aramaSonucu = aramasonuclari.get(0).getText();
         System.out.println(aramaSonucu);
         String [] aramaSonucArr = aramaSonucu.split(" ");
         System.out.println(Arrays.toString(aramaSonucArr));
-        System.out.println("aramaSonucArr[2] = " + aramaSonucArr[2]);
-//Sonra karşınıza çıkan ilk sonucun resmine tıklayın.
+        System.out.println("Arama sonucu = " + aramaSonucArr[2]);
+        //sonuc sayısını Lambda ile yapınız
+        Arrays.stream(aramasonuclari.get(0).getText().split(" ")).limit(3).skip(2).forEach(System.out::println);
+        //Sonra karşınıza çıkan ilk sonucun resmine tıklayın.
         List <WebElement> firstImg = driver.findElements(By.className("s-image"));
         firstImg.get(0).click();
-//        Sayfayı kapatın
+        //Sayfayı kapatın
         driver.close();
     }
 }
