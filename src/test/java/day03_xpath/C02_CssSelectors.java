@@ -29,8 +29,9 @@ public class C02_CssSelectors {
 //      Birthday butonuna basin
         driver.findElement(By.cssSelector("img[alt='Birthday']")).click();
 //      Best Seller bolumunden ilk urunu tiklayin
-        List<WebElement> ilk = driver.findElements(By.cssSelector("img[alt='Amazon.com eGift Card']"));
-        ilk.get(0).click();
+        driver.findElement(By.cssSelector("img[alt='Amazon.com eGift Card']")).click();
+        // List<WebElement> ilk = driver.findElements(By.cssSelector("img[alt='Amazon.com eGift Card']"));
+        //ilk.get(0).click();
 //      Gift card details’den 25 $’i secin
         List<WebElement> sec = driver.findElements(By.cssSelector("button[id='gc-mini-picker-amount-1']"));
         sec.get(0).click();
